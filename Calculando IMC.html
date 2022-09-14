@@ -1,0 +1,46 @@
+<script>
+     
+    function pulaLinha() {
+
+    document.write("<br><br>")
+}
+
+function mostra(renan) {
+
+    document.write(renan);
+    pulaLinha();
+
+}
+
+    function calculaImc(altura, peso) { // Recebe dois parametros e essa function calcula o IMC
+
+    var imc = peso / (altura * altura);
+    mostra("O IMC é: " + imc)
+}
+
+    function somaImc(altura1, peso1, altura2, peso2) {
+        var imc1 = peso1 / (altura1 * altura1);
+        var imc2 = peso2 / (altura2 * altura2);
+        var imcTotal = imc1 + imc2;
+        mostra("A soma dos IMC's: " + imcTotal);
+}
+
+    function somaImc2(altura, peso) { // Function com return
+        var imc = peso / (altura * altura);
+        return imc;
+}
+    var imcRenan = somaImc2(1.80, 88);
+    var imcAmigo = somaImc2(1.90, 75);
+    
+
+    mostra(imcRenan);
+    mostra(imcAmigo);
+    
+    calculaImc(1.71, 83);
+    calculaImc(1.63, 41);
+
+    somaImc(1.71, 83, 1.71, 83)
+
+
+
+</script>
