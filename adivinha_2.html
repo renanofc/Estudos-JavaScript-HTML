@@ -7,6 +7,7 @@
 
     var segredo = Math.round(Math.random() * 10);
     var input = document.querySelector("input"); // Puxar o input para o JavaScript
+    input.focus(); // Para a input ficar focada
     input.value // Para saber o valor digitado na caixinha do input
 
     function verifica() {
@@ -20,7 +21,8 @@
             alert("Voce errou o numero!");
 
         }
-
+        input.value = ""; // Para limpar o input apos a tentativa
+        input.focus(); // Para a input ficar focada apos tentativa
     }
 
     var button = document.querySelector("button");
