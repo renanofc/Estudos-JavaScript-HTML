@@ -5,26 +5,36 @@
 
 <script>
 
-    var segredo = Math.round(Math.random() * 10);
+    var segredos = [5, 10, 20, 25, 40]; // Isso e um array, ter mais dados no var
+
     var input = document.querySelector("input"); // Puxar o input para o JavaScript
     input.focus(); // Para a input ficar focada
-    input.value // Para saber o valor digitado na caixinha do input
+   // input.value // Para saber o valor digitado na caixinha do input
 
     function verifica() {
 
-        if(input.value == 5) {
+        var achou = false;
+        for (var posicao = 0; posicao < segredos.length; posicao++)  { // .length detecta a quantidade de elementos no array
 
-            alert("Voce acertou o numero!");
+            if(input.value == segredos[posicao]) {
 
-        }else {
+                alert("Voce acertou o numero!");
+                achou = true;
+                break;
 
-            alert("Voce errou o numero!");
+            }
+        }
+    }
 
+
+    if (achou == false) {
+
+            alert("Voce errou!");
         }
         input.value = ""; // Para limpar o input apos a tentativa
         input.focus(); // Para a input ficar focada apos tentativa
-    }
 
     var button = document.querySelector("button");
     button.onclick = verifica; // Quando clica no butao ele chama function verifica
+
 </script>
