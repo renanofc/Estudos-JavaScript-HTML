@@ -4,8 +4,29 @@
 <button>Digite o numero pensado</button>
 
 <script>
+    function sorteio() {
 
-    var segredos = [5, 10, 20, 25, 40]; // Isso e um array, ter mais dados no var
+        return Math.round(Math.random() * 10);
+
+    }
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+            segredos.push(sorteio());
+            numero++;
+        }
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(5);
+    // var segredos = []; // Isso e um array, ter mais dados no var
+    // .push puxa os dados informados pro array
+   // Exemplo: segredos.push(sorteio());
 
     var input = document.querySelector("input"); // Puxar o input para o JavaScript
     input.focus(); // Para a input ficar focada
@@ -31,8 +52,9 @@
 
             alert("Voce errou!");
         }
-        input.value = ""; // Para limpar o input apos a tentativa
-        input.focus(); // Para a input ficar focada apos tentativa
+
+    input.value = ""; // Para limpar o input apos a tentativa
+    input.focus(); // Para a input ficar focada apos tentativa
 
     var button = document.querySelector("button");
     button.onclick = verifica; // Quando clica no butao ele chama function verifica
