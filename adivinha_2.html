@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Digite o numero pensado</button>
+
+<script>
+
+    var segredo = Math.round(Math.random() * 10);
+    var input = document.querySelector("input"); // Puxar o input para o JavaScript
+    input.value // Para saber o valor digitado na caixinha do input
+
+    function verifica() {
+
+        if(input.value == 5) {
+
+            alert("Voce acertou o numero!");
+
+        }else {
+
+            alert("Voce errou o numero!");
+
+        }
+
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = verifica; // Quando clica no butao ele chama function verifica
+</script>
